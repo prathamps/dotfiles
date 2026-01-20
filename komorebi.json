@@ -1,0 +1,72 @@
+{
+	"$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.32/schema.json",
+	"app_specific_configuration_path": "C:/Users/pspra/applications.json",
+	"window_hiding_behaviour": "Cloak",
+	"cross_monitor_move_behaviour": "Insert",
+	"default_workspace_padding": 0,
+	"default_container_padding": -1,
+	"border": true,
+	"border_width": 2,
+	"border_offset": 0,
+	"theme": {
+		"palette": "Base16",
+		"name": "Ashes",
+		"unfocused_border": "Base02",
+		"bar_accent": "Base0D"
+	},
+	"stackbar": {
+		"height": 28,
+		"mode": "OnStack",
+		"tabs": {
+			"width": 220
+		}
+	},
+	"animation": {
+		"enabled": false,
+		"fps": 60,
+		"duration": 500,
+		"style": "EaseOutQuart"
+	},
+	"monitors": [
+		{
+			"workspaces": [
+				{
+					"name": "web",
+					"layout": "VerticalStack"
+				},
+				{
+					"name": "discord",
+					"layout": "VerticalStack"
+				},
+				{
+					"name": "game",
+					"layout": "VerticalStack"
+				},
+				{
+					"name": "term",
+					"layout": "VerticalStack"
+				},
+				{
+					"name": "file",
+					"layout": "VerticalStack"
+				},
+				{
+					"name": "code",
+					"layout": "VerticalStack"
+				},
+				{
+					"name": "radar",
+					"layout": "VerticalStack"
+				},
+				{
+					"name": "music",
+					"layout": "VerticalStack"
+				},
+				{
+					"name": "spare",
+					"layout": "VerticalStack"
+				}
+			]
+		}
+	]
+}
