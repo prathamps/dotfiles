@@ -209,7 +209,7 @@ widgets:
   #     api_key: ""
   #     update_interval: 600
   #     hide_decimal: true
-  #     location: "Mangalore, Karnataka"
+  #     location: "Your City, State"
   #     callbacks:
   #       on_left: "toggle_label"
   #     icons:
