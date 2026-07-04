@@ -1,0 +1,7 @@
+#!/bin/bash
+# Called by wl-paste --watch on every clipboard event. Must return
+# immediately — a blocking callback stalls the whole watch loop and
+# makes it miss subsequent clipboard changes. Real work happens in
+# the backgrounded worker (serialized internally via flock).
+"$HOME/.local/bin/clipboard-persist-worker" &
+exit 0

@@ -1,0 +1,99 @@
+(
+    name: "cosmic-dark",
+    bright_red: (
+        red: 1.00000000, green: 0.62745100, blue: 0.60392160, alpha: 1.0,
+    ),
+    bright_green: (
+        red: 0.36862746, green: 0.85882354, blue: 0.54901960, alpha: 1.0,
+    ),
+    bright_orange: (
+        red: 1.00000000, green: 0.63921570, blue: 0.49019608, alpha: 1.0,
+    ),
+    gray_1: (
+        red: 0.12105882, green: 0.11347059, blue: 0.10429411, alpha: 1.0,
+    ),
+    gray_2: (
+        red: 0.16549020, green: 0.15725490, blue: 0.14678432, alpha: 1.0,
+    ),
+    neutral_0: (
+        red: 0.01200000, green: 0.00600000, blue: 0.00000000, alpha: 1.0,
+    ),
+    neutral_1: (
+        red: 0.02411765, green: 0.01794118, blue: 0.01158824, alpha: 1.0,
+    ),
+    neutral_2: (
+        red: 0.10086275, green: 0.09356863, blue: 0.08498039, alpha: 1.0,
+    ),
+    neutral_3: (
+        red: 0.19780392, green: 0.18909804, blue: 0.17768628, alpha: 1.0,
+    ),
+    neutral_4: (
+        red: 0.30282354, green: 0.29258824, blue: 0.27811766, alpha: 1.0,
+    ),
+    neutral_5: (
+        red: 0.41188236, green: 0.40005883, blue: 0.38241177, alpha: 1.0,
+    ),
+    neutral_6: (
+        red: 0.52901957, green: 0.51549016, blue: 0.49443134, alpha: 1.0,
+    ),
+    neutral_7: (
+        red: 0.65019611, green: 0.63490199, blue: 0.61031375, alpha: 1.0,
+    ),
+    neutral_8: (
+        red: 0.77945099, green: 0.76227452, blue: 0.73392158, alpha: 1.0,
+    ),
+    neutral_9: (
+        red: 0.90870589, green: 0.88964706, blue: 0.85752942, alpha: 1.0,
+    ),
+    neutral_10: (
+        red: 1.00000000, green: 1.00000000, blue: 0.98500000, alpha: 1.0,
+    ),
+    accent_blue: (
+        red: 0.81329411, green: 0.16935629, blue: 0.15755295, alpha: 1.0,
+    ),
+    accent_indigo: (
+        red: 0.85705883, green: 0.47277341, blue: 0.46572948, alpha: 1.0,
+    ),
+    accent_purple: (
+        red: 0.90588236, green: 0.61176470, blue: 0.99607843, alpha: 1.0,
+    ),
+    accent_pink: (
+        red: 1.00000000, green: 0.61176470, blue: 0.69411767, alpha: 1.0,
+    ),
+    accent_red: (
+        red: 0.99215686, green: 0.63137260, blue: 0.62745100, alpha: 1.0,
+    ),
+    accent_orange: (
+        red: 1.00000000, green: 0.67843140, blue: 0.00000000, alpha: 1.0,
+    ),
+    accent_yellow: (
+        red: 0.96862745, green: 0.87843140, blue: 0.38431373, alpha: 1.0,
+    ),
+    accent_green: (
+        red: 0.57254905, green: 0.81176470, blue: 0.61176470, alpha: 1.0,
+    ),
+    accent_warm_grey: (
+        red: 0.79215690, green: 0.72941180, blue: 0.70588240, alpha: 1.0,
+    ),
+    ext_warm_grey: (
+        red: 0.60784316, green: 0.55686280, blue: 0.54117650, alpha: 1.0,
+    ),
+    ext_orange: (
+        red: 1.00000000, green: 0.67843140, blue: 0.00000000, alpha: 1.0,
+    ),
+    ext_yellow: (
+        red: 0.99607843, green: 0.85882354, blue: 0.25098038, alpha: 1.0,
+    ),
+    ext_blue: (
+        red: 0.72576472, green: 0.06624774, blue: 0.05415883, alpha: 1.0,
+    ),
+    ext_purple: (
+        red: 0.81176470, green: 0.49019608, blue: 1.00000000, alpha: 1.0,
+    ),
+    ext_pink: (
+        red: 0.97647060, green: 0.22745098, blue: 0.51372550, alpha: 1.0,
+    ),
+    ext_indigo: (
+        red: 0.93000000, green: 0.01674000, blue: 0.00000000, alpha: 1.0,
+    ),
+)

@@ -1,0 +1,12 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Print",
+    ): System(Screenshot),
+    (
+        modifiers: [],
+        key: "Print",
+    ): Spawn("/home/pratham/.local/bin/flameshot-wayland"),
+}

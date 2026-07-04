@@ -1,0 +1,52 @@
+#!/bin/bash
+# Re-offers clipboard content from this long-lived service so it survives
+# the source application closing (Wayland clears the clipboard otherwise).
+# Serialized via flock; every read has a timeout so a stale/dead clipboard
+# offer can never wedge the pipeline (each worker reads the *current*
+# clipboard state, so timed-out events self-heal on the next run).
+set -u
+umask 077
+
+dir="${XDG_RUNTIME_DIR:-/tmp}/clipboard-persist"
+mkdir -p "$dir"
+
+exec 9>>"$dir/lock"
+flock -w 15 9 || exit 0
+
+types=$(timeout 3 wl-paste --list-types 2>/dev/null) || exit 0
+
+# Leave special clipboard contents alone:
+# - file-manager copy/cut (uri-list, x-special) needs multiple mime types
+# - password managers mark secrets they clear on purpose
+case "$types" in
+  *x-special/*|*text/uri-list*|*x-kde-passwordManagerHint*) exit 0 ;;
+esac
+
+# Prefer an image type (screenshots), else plain text
+type=""
+while IFS= read -r t; do
+  case "$t" in
+    image/png|image/jpeg|image/webp|image/bmp|image/tiff) type="$t"; break ;;
+  esac
+done <<< "$types"
+if [ -z "$type" ]; then
+  case "$types" in
+    *"text/plain;charset=utf-8"*) type="text/plain;charset=utf-8" ;;
+    *text/plain*) type="text/plain" ;;
+    *) exit 0 ;;
+  esac
+fi
+
+tmp="$dir/current.new"
+timeout 5 wl-paste -n -t "$type" > "$tmp" 2>/dev/null || { rm -f "$tmp"; exit 0; }
+[ -s "$tmp" ] || { rm -f "$tmp"; exit 0; }
+
+# If content matches what we already re-offered, this event is our own
+# wl-copy taking ownership — skip to avoid an infinite loop.
+new_hash=$(sha256sum "$tmp" | cut -d' ' -f1)
+old_hash=$(cat "$dir/hash" 2>/dev/null || true)
+if [ "$new_hash" = "$old_hash" ]; then rm -f "$tmp"; exit 0; fi
+
+mv "$tmp" "$dir/current"
+printf '%s' "$new_hash" > "$dir/hash"
+wl-copy -t "$type" < "$dir/current"

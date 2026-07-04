@@ -1,0 +1,12 @@
+[Unit]
+Description=Keep clipboard contents alive after the source app closes
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/wl-paste --watch %h/.local/bin/clipboard-persist-store
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,4 @@
+#!/bin/bash
+export QT_QPA_PLATFORM=wayland
+export XDG_CURRENT_DESKTOP=GNOME
+exec flameshot gui
