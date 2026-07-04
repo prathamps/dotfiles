@@ -36,8 +36,9 @@ if ! flatpak info io.github.cosmic_utils.minimon-applet >/dev/null 2>&1; then
     echo "   (install manually from the COSMIC Store if the 'cosmic' remote is missing)"
 fi
 
-echo ">> Wallpaper"
+echo ">> Wallpaper (RDR2 press screenshot, not kept in repo)"
 mkdir -p ~/Pictures/Wallpapers
-cp ../../shared/wallpapers/rdr2-sunset.jpg ~/Pictures/Wallpapers/
+[ -f ~/Pictures/Wallpapers/rdr2-sunset.jpg ] || curl -sSL -o ~/Pictures/Wallpapers/rdr2-sunset.jpg \
+  "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/ss_d1a8f5a69155c3186c65d1da90491fcfd43663d9.1920x1080.jpg"
 
 echo "Done. Log out/in (or restart cosmic-panel) to pick up panel/theme changes."
